@@ -25,7 +25,7 @@ if [ -z "$(ls -A $ANG_DIR)" ]; then
         git clone $GIT_REPO $ANG_DIR
         docker build -t maaz0816/buildserver:v$TAG /angular/
         docker push maaz0816/buildserver:v$TAG
-        docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWD
+        docker login --username $DOCK_USERNAME --password $DOCK_PASSWD
         ssh root@$WEB_SERVER_IP
         cd /angular/
         docker image pull maaz0816/buildserver:v$TAG
